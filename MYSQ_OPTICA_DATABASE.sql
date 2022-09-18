@@ -33,11 +33,17 @@ CREATE TABLE Clientes (
     correo_electronico VARCHAR(20),
     fecha_de_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
     recomendado_por_id_cliente INTEGER UNSIGNED,
-    empleado VARCHAR(45) NOT NULL,
+    id_empleado INTEGER UNSIGNED,
     id_gafas INTEGER UNSIGNED, 
     FOREIGN KEY (id_gafas) REFERENCES Gafas (id_gafas),
-    KEY recomendado_por_id_cliente (id_cliente)
+    KEY recomendado_por_id_cliente (id_cliente),
+    FOREIGN KEY (id_empleado) REFERENCES Empleados (id_empleado)
     );
+    
+CREATE TABLE Empleados (
+  id_empleado INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(30) DEFAULT NULL 
+);
 
 /* Proveedores */
 INSERT INTO Proveedores VALUES (1, 'Medical Beauty', 'CALLE ROSSELO 59, 08029, BARCELONA, ESPAÑA', '659445539', '932773433', 'B45692325');
@@ -48,6 +54,10 @@ INSERT INTO Gafas VALUES (2, '1', 'RainbowShow', '-3', '-1', 'flotante', 'gris',
 INSERT INTO Gafas VALUES (3, '2', 'RainbowSun', '2', '-1', 'metalica', 'azul', 'azul', 350);
 
 /* Clientes */
-INSERT INTO Clientes VALUES (1, 'Jordi Lopez', 'CALLE ROSSELO 168, 08029, BARCELONA, ESPAÑA', '659382432', 'jlopez@gmail.com', '2022-07-27', 2, 'Sara Veda', 3);
-INSERT INTO Clientes VALUES (2, 'Olivia Gomez', 'CALLE MALLORCA 11, 08029, BARCELONA, ESPAÑA', '659382818', 'OLIV@gmail.com', '2022-07-28', 2, 'Sara Veda', 2);
-INSERT INTO Clientes VALUES (3, 'Angela Cortez', 'CALLE ENTENZA 213, 08029, BARCELONA, ESPAÑA', '659382998', 'Aangela71@gmail.com', '2022-07-29', 3, 'Lisa Wu', 1);
+INSERT INTO Clientes VALUES (1, 'Jordi Lopez', 'CALLE ROSSELO 168, 08029, BARCELONA, ESPAÑA', '659382432', 'jlopez@gmail.com', '2022-07-27', 2, '1', 3);
+INSERT INTO Clientes VALUES (2, 'Olivia Gomez', 'CALLE MALLORCA 11, 08029, BARCELONA, ESPAÑA', '659382818', 'OLIV@gmail.com', '2022-07-28', 2, '1', 2);
+INSERT INTO Clientes VALUES (3, 'Angela Cortez', 'CALLE ENTENZA 213, 08029, BARCELONA, ESPAÑA', '659382998', 'Aangela71@gmail.com', '2022-07-29', 3, '2', 1);
+
+/*Empleados*/
+INSERT INTO Empleados VALUES (1, 'Alba Gonzalez');
+INSERT INTO Empleados VALUES (2, 'Clara Bove');
