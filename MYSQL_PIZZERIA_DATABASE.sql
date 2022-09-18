@@ -69,13 +69,15 @@ id_cliente INTEGER UNSIGNED NOT NULL,
 fecha_hora_pedido DATETIME NOT NULL,
 tipo ENUM('reparto a domicilio', 'recogida en el local') NOT NULL,
 cantidad_productos INTEGER NOT NULL,
+id_producto INTEGER UNSIGNED NOT NULL,
 id_tienda INTEGER UNSIGNED NOT NULL,
 precio INTEGER NOT NULL,
 id_repartidor INTEGER UNSIGNED,
 fecha_hora_entrega DATETIME,
 FOREIGN KEY (id_repartidor) REFERENCES empleados (id_empleado),
 FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
-FOREIGN KEY (id_tienda) REFERENCES tiendas (id_tienda)
+FOREIGN KEY (id_tienda) REFERENCES tiendas (id_tienda),
+FOREIGN KEY (id_producto) REFERENCES tipo_de_productos (id_producto)
 );
 
 
@@ -101,4 +103,5 @@ INSERT INTO tiendas VALUES (1, 'CALLE VALLESPIR 85', 08014, 1,1);
 INSERT INTO empleados VALUES (1, 'Andres', 'Gonzalez', 'Y5129443H', '659382433', 1, 'repartidor');
 
 /* Pedidos */
-INSERT INTO pedidos VALUES (1, 1, '2022-07-27', 'reparto a domicilio', 2, 1, 19, 1, '2022-07-27');
+INSERT INTO pedidos VALUES (1, 1, '2022-07-27', 'reparto a domicilio', 2, 1, 1, 19, 1, '2022-07-27');
+
