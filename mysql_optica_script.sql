@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `optica_mysql` DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 -- Schema optica_mysql
 -- -----------------------------------------------------
@@ -22,7 +22,7 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 CREATE SCHEMA IF NOT EXISTS `optica_mysql` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 -- -----------------------------------------------------
 -- -----------------------------------------------------
--- Table `mydb`.`clientes`
+-- Table `optica_mysql`.`clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `optica_mysql`.`clientes` (
   `id_cliente` INT UNSIGNED NOT NULL,
