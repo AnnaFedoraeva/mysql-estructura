@@ -21,30 +21,10 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `optica_mysql` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 -- -----------------------------------------------------
--- Schema mysql_optica
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mysql_optica
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mysql_optica` ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`Clientes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Clientes` (
-  `id_cliente` INT UNSIGNED NOT NULL,
-  `nombre` VARCHAR(45) NULL,
-  `Clientescol` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_cliente`))
-ENGINE = InnoDB;
-
-
 -- -----------------------------------------------------
 -- Table `mydb`.`clientes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`clientes` (
+CREATE TABLE IF NOT EXISTS `optica_mysql`.`clientes` (
   `id_cliente` INT UNSIGNED NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `direccion` VARCHAR(45) NULL,
@@ -147,7 +127,7 @@ AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
-USE `mysql_optica` ;
+USE `optica_mysql` ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
